@@ -46,6 +46,7 @@ function playround() {
     /*comp wins*/
     else { alert(userplay + " beats " + compplay + " , Comp wins this round"); computerscore++ }
     /*tell users the score*/
+    console.clear()
     printscore()
 }
 
