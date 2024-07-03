@@ -55,6 +55,9 @@ function playgame() {
     playround();
     playround();
     playround();
+    if (humanscore > computerscore) { alert("You win"); console.log("the user won") }
+    else if (computerscore > humanscore) { alert("you lose sucker, the robot overlords are coming for you"); console.log("theyre coming, just like Will Smith warned us") }
+    else { alert("Its a tie. We'll be back"); console.log("The robots are biding their time. They'll be back for blood") }
 }
 
 playgame()
