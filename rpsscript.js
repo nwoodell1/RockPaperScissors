@@ -26,25 +26,40 @@ function getHumanChoice() {
 var humanscore = 0
 var computerscore = 0
 
+function printscore() {
+    console.log("human score " + humanscore)
+    console.log("comp score " + computerscore)
+}
 
-
-function playround(x, y) {
+function playround() {
+    /*get plays*/
+    var userplay = getHumanChoice()
+    var compplay = getComputerChoice()
     /*tie*/
-    if (x === y) { alert("Its a tie") }
+    if (userplay === compplay) { alert("Its a tie") }
     /*human wins*/
     else if (
-        (x === "rock" && y === "scissors") ||
-        (x === "paper" && y === "rock") ||
-        (x === "scissors" && y === "paper")
-    ) { alert(x + " beats " + y + ", Human wins this round"); humanscore++ }
+        (userplay === "rock" && compplay === "scissors") ||
+        (userplay === "paper" && compplay === "rock") ||
+        (userplay === "scissors" && compplay === "paper")
+    ) { alert(userplay + " beats " + compplay + ", Human wins this round"); humanscore++ }
     /*comp wins*/
-    else { alert(y + " beats " + x + " , Comp wins this round"); computerscore++ }
+    else { alert(userplay + " beats " + compplay + " , Comp wins this round"); computerscore++ }
+    /*tell users the score*/
+    printscore()
+}
 
-};
+function playgame() {
+    playround();
+    playround();
+    playround();
+    playround();
+    playround();
+}
 
-const userplay = getHumanChoice()
-const compplay = getComputerChoice()
+playgame()
 
-playround(userplay, compplay)
-console.log("human score " + humanscore)
-console.log("comp score " + computerscore)
+
+
+
+
